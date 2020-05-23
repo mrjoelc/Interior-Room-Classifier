@@ -39,11 +39,7 @@ public class WelcomeActivity extends AppCompatActivity {
       new PageData(
           R.string.welcome_page_title,
           R.drawable.ic_logo_pytorch,
-          R.string.welcome_page_description),
-      new PageData(
-          R.string.welcome_page_image_classification_title,
-          R.drawable.ic_image_classification_l,
-          R.string.welcome_page_image_classification_description)
+          R.string.welcome_page_description)
   };
 
   @Override
@@ -57,8 +53,8 @@ public class WelcomeActivity extends AppCompatActivity {
     mViewPagerAdapter = new WelcomeViewPagerAdapter();
     mViewPager.setAdapter(mViewPagerAdapter);
 
-    mTabLayout = findViewById(R.id.welcome_tab_layout);
-    mTabLayout.setupWithViewPager(mViewPager);
+    //mTabLayout = findViewById(R.id.welcome_tab_layout);
+   // mTabLayout.setupWithViewPager(mViewPager);
   }
 
   private class WelcomeViewPagerAdapter extends PagerAdapter {

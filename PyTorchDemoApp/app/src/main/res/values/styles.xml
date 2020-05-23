@@ -87,7 +87,8 @@
     <style name="TextAppearanceMainVisionNlp" parent="TextAppearance.AppCompat.Display1">
         <item name="android:textAllCaps">true</item>
         <item name="android:textColor">@color/textColor</item>
-        <item name="android:letterSpacing">0.2</item>
+        <item name="android:textSize">@dimen/main_vision_text</item>
+        <item name="android:letterSpacing">0.1</item>
         <item name="android:fontFamily">sans-serif-light</item>
     </style>
 
