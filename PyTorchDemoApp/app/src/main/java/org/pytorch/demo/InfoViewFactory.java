@@ -10,7 +10,6 @@ import androidx.annotation.Nullable;
 public class InfoViewFactory {
   public static final int INFO_VIEW_TYPE_IMAGE_CLASSIFICATION_RESNET = 1;
   public static final int INFO_VIEW_TYPE_IMAGE_CLASSIFICATION_QMOBILENET = 2;
-  public static final int INFO_VIEW_TYPE_TEXT_CLASSIFICATION = 3;
 
   public static View newInfoView(Context context, int infoViewType, @Nullable String additionalText) {
     LayoutInflater inflater = LayoutInflater.from(context);
@@ -31,17 +30,14 @@ public class InfoViewFactory {
       TextView infoTextView = view.findViewById(R.id.info_title);
       TextView descriptionTextView = view.findViewById(R.id.info_description);
 
-      infoTextView.setText(R.string.vision_card_qmobilenet_title);
-      StringBuilder sb = new StringBuilder(context.getString(R.string.vision_card_qmobilenet_description));
+      infoTextView.setText(R.string.vision_card_squeeznet_title);
+      StringBuilder sb = new StringBuilder(context.getString(R.string.vision_card_squeeznet_description));
       if (additionalText != null) {
         sb.append('\n').append(additionalText);
       }
       descriptionTextView.setText(sb.toString());
       return view;
-    } //else if (INFO_VIEW_TYPE_TEXT_CLASSIFICATION == infoViewType) {
-
-      //return null;
-    //}
+    }
     throw new IllegalArgumentException("Unknown info view type");
   }
 

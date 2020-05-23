@@ -15,12 +15,12 @@
         android:textAppearance="@style/TextAppearanceMainVisionNlp" />
 
     <org.pytorch.demo.ListCardView
-        android:id="@+id/vision_card_qmobilenet_click_area"
+        android:id="@+id/vision_card_squeeznet_click_area"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/list_content_margin"
-        app:titleRes="@string/vision_card_qmobilenet_title"
-        app:descriptionRes="@string/vision_card_qmobilenet_description"
+        app:titleRes="@string/vision_card_squeeznet_title"
+        app:descriptionRes="@string/vision_card_squeeznet_description"
         app:imageRes="@drawable/ic_image_classification_s"
         android:elevation="1dp"/>
 

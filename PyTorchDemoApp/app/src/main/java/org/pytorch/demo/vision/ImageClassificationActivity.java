@@ -95,9 +95,10 @@ public class ImageClassificationActivity extends AbstractCameraXActivity<ImageCl
     mResultRowViews[1] = findViewById(R.id.image_classification_top2_result_row);
     mResultRowViews[2] = findViewById(R.id.image_classification_top3_result_row);
 
+    /*
     mFpsText = findViewById(R.id.image_classification_fps_text);
     mMsText = findViewById(R.id.image_classification_ms_text);
-    mMsAvgText = findViewById(R.id.image_classification_ms_avg_text);
+    mMsAvgText = findViewById(R.id.image_classification_ms_avg_text); */
   }
 
   @Override
@@ -116,22 +117,22 @@ public class ImageClassificationActivity extends AbstractCameraXActivity<ImageCl
       rowView.setProgressState(false);
     }
 
-    mMsText.setText(String.format(Locale.US, FORMAT_MS, result.moduleForwardDuration));
+    /*mMsText.setText(String.format(Locale.US, FORMAT_MS, result.moduleForwardDuration));
     if (mMsText.getVisibility() != View.VISIBLE) {
-      mMsText.setVisibility(View.VISIBLE);
+      //mMsText.setVisibility(View.VISIBLE);
     }
     mFpsText.setText(String.format(Locale.US, FORMAT_FPS, (1000.f / result.analysisDuration)));
     if (mFpsText.getVisibility() != View.VISIBLE) {
-      mFpsText.setVisibility(View.VISIBLE);
+      //mFpsText.setVisibility(View.VISIBLE);
     }
 
     if (mMovingAvgQueue.size() == MOVING_AVG_PERIOD) {
       float avgMs = (float) mMovingAvgSum / MOVING_AVG_PERIOD;
       mMsAvgText.setText(String.format(Locale.US, FORMAT_AVG_MS, avgMs));
       if (mMsAvgText.getVisibility() != View.VISIBLE) {
-        mMsAvgText.setVisibility(View.VISIBLE);
+      //  mMsAvgText.setVisibility(View.VISIBLE);
       }
-    }
+    }*/
   }
 
   protected String getModuleAssetName() {
@@ -189,7 +190,7 @@ public class ImageClassificationActivity extends AbstractCameraXActivity<ImageCl
       final float[] topKScores = new float[TOP_K];
       for (int i = 0; i < TOP_K; i++) {
         final int ix = ixs[i];
-        topKClassNames[i] = Constants.IMAGENET_CLASSES[ix];
+        topKClassNames[i] = Constants.CLASSES[ix];
         topKScores[i] = scores[ix];
       }
       final long analysisDuration = SystemClock.elapsedRealtime() - startTime;

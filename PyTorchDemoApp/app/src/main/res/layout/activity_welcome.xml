@@ -11,7 +11,7 @@
         style="@style/Button"
         android:layout_width="match_parent"
         android:layout_height="@dimen/button_height"
-        android:text="@string/welcome_skip_button"
+        android:text="@string/welcome_start_button"
         android:textColor="@android:color/black"
         android:background="@drawable/bg_skip_button"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -12,10 +12,10 @@ public class VisionListActivity extends AbstractListActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    findViewById(R.id.vision_card_qmobilenet_click_area).setOnClickListener(v -> {
+    findViewById(R.id.vision_card_squeeznet_click_area).setOnClickListener(v -> {
       final Intent intent = new Intent(VisionListActivity.this, ImageClassificationActivity.class);
       intent.putExtra(ImageClassificationActivity.INTENT_MODULE_ASSET_NAME,
-          "resnet.pt");
+          "squeeznet.pt");
       intent.putExtra(ImageClassificationActivity.INTENT_INFO_VIEW_TYPE,
           InfoViewFactory.INFO_VIEW_TYPE_IMAGE_CLASSIFICATION_QMOBILENET);
       startActivity(intent);
