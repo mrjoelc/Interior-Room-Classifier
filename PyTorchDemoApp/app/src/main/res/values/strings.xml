@@ -21,6 +21,9 @@
     <string name="vision_card_resnet_title">Resnet</string>
     <string name="vision_card_resnet_description">Resnet model.\nInput is a tensor of \n1x3x224x224 shape</string>
 
+    <string name="vision_card_vgg_title">VGG16</string>
+    <string name="vision_card_vgg_description">VGG16 model.\nInput is a tensor of \n1x3x224x224 shape</string>
+
     <string name="error_dialog_text">Errore!</string>
 
 </resources>

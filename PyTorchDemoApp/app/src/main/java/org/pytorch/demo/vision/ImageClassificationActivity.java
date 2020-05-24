@@ -1,5 +1,6 @@
 package org.pytorch.demo.vision;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.text.TextUtils;
@@ -26,6 +27,7 @@ import java.util.Queue;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.WorkerThread;
+import androidx.appcompat.widget.Toolbar;
 import androidx.camera.core.ImageProxy;
 
 public class ImageClassificationActivity extends AbstractCameraXActivity<ImageClassificationActivity.AnalysisResult> {
@@ -86,6 +88,7 @@ public class ImageClassificationActivity extends AbstractCameraXActivity<ImageCl
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+
     final ResultRowView headerResultRowView =
         findViewById(R.id.image_classification_result_header_row);
     headerResultRowView.nameTextView.setText(R.string.image_classification_results_header_row_name);
@@ -147,10 +150,12 @@ public class ImageClassificationActivity extends AbstractCameraXActivity<ImageCl
     return mModuleAssetName;
   }
 
+  /*
   @Override
   protected String getInfoViewAdditionalText() {
     return getModuleAssetName();
   }
+   */
 
   @Override
   @WorkerThread
@@ -207,10 +212,10 @@ public class ImageClassificationActivity extends AbstractCameraXActivity<ImageCl
     }
   }
 
-  @Override
+  /*@Override
   protected int getInfoViewCode() {
     return getIntent().getIntExtra(INTENT_INFO_VIEW_TYPE, -1);
-  }
+  }*/
 
   @Override
   protected void onDestroy() {

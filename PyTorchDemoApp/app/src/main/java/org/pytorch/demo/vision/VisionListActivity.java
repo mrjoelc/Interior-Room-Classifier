@@ -16,15 +16,21 @@ public class VisionListActivity extends AbstractListActivity {
       final Intent intent = new Intent(VisionListActivity.this, ImageClassificationActivity.class);
       intent.putExtra(ImageClassificationActivity.INTENT_MODULE_ASSET_NAME,
           "squeeznet.pt");
-      intent.putExtra(ImageClassificationActivity.INTENT_INFO_VIEW_TYPE,
-          InfoViewFactory.INFO_VIEW_TYPE_IMAGE_CLASSIFICATION_QMOBILENET);
+      intent.putExtra("model", "SqueezeNet");
       startActivity(intent);
     });
     findViewById(R.id.vision_card_resnet_click_area).setOnClickListener(v -> {
       final Intent intent = new Intent(VisionListActivity.this, ImageClassificationActivity.class);
       intent.putExtra(ImageClassificationActivity.INTENT_MODULE_ASSET_NAME, "resnet.pt");
-      intent.putExtra(ImageClassificationActivity.INTENT_INFO_VIEW_TYPE,
-          InfoViewFactory.INFO_VIEW_TYPE_IMAGE_CLASSIFICATION_RESNET);
+      /*intent.putExtra(ImageClassificationActivity.INTENT_INFO_VIEW_TYPE,
+              getResources().getString(R.string.vision_card_resnet_description));*/
+      startActivity(intent);
+    });
+    findViewById(R.id.vision_card_vgg16_click_area).setOnClickListener(v -> {
+      final Intent intent = new Intent(VisionListActivity.this, ImageClassificationActivity.class);
+      intent.putExtra(ImageClassificationActivity.INTENT_MODULE_ASSET_NAME, "VGG16.pt");
+      /*intent.putExtra(ImageClassificationActivity.INTENT_INFO_VIEW_TYPE,
+              getResources().getString(R.string.vision_card_vgg_description));*/
       startActivity(intent);
     });
   }

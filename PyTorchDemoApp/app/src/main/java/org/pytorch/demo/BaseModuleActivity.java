@@ -1,5 +1,6 @@
 package org.pytorch.demo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -31,6 +32,9 @@ public class BaseModuleActivity extends AppCompatActivity {
   protected void onPostCreate(@Nullable Bundle savedInstanceState) {
     super.onPostCreate(savedInstanceState);
     final Toolbar toolbar = findViewById(R.id.toolbar);
+
+    Intent i = getIntent();
+    toolbar.setTitle(i.getStringExtra("model"));
     if (toolbar != null) {
       setSupportActionBar(toolbar);
     }
@@ -60,9 +64,9 @@ public class BaseModuleActivity extends AppCompatActivity {
     }
   }
 
-  @Override
+  /*@Override
   public boolean onCreateOptionsMenu(Menu menu) {
-    getMenuInflater().inflate(R.menu.menu_model, menu);
+    /*getMenuInflater().inflate(R.menu.menu_model, menu);
     menu.findItem(R.id.action_info).setVisible(getInfoViewCode() != UNSET);
     return true;
   }
@@ -90,6 +94,7 @@ public class BaseModuleActivity extends AppCompatActivity {
 
     builder.show();
   }
+  */
 
   @UiThread
   protected void showErrorDialog(View.OnClickListener clickListener) {
