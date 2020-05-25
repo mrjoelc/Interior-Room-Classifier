@@ -21,6 +21,7 @@ import org.pytorch.torchvision.TensorImageUtils;
 
 import java.io.File;
 import java.nio.FloatBuffer;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Locale;
 import java.util.Queue;
@@ -188,8 +189,20 @@ public class ImageClassificationActivity extends AbstractCameraXActivity<ImageCl
       final Tensor outputTensor = mModule.forward(IValue.from(mInputTensor)).toTensor();
       final long moduleForwardDuration = SystemClock.elapsedRealtime() - moduleForwardStartTime;
 
-      final float[] scores = outputTensor.getDataAsFloatArray();
+      float[] scores = outputTensor.getDataAsFloatArray();
       final int[] ixs = Utils.topK(scores, TOP_K);
+
+      //implementazione softmax
+      float total=0;
+      for(int i = 0; i<scores.length; i++){
+        total += (float) Math.exp(scores[i]);
+      }
+      for(int i=0; i<scores.length; i++){
+        scores[i]= (float) Math.exp(scores[i]) / total;
+      }
+      for(int i=0; i<scores.length; i++){
+        System.out.println(scores[i]);
+      }
 
       final String[] topKClassNames = new String[TOP_K];
       final float[] topKScores = new float[TOP_K];
