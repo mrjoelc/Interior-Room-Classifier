@@ -10,7 +10,7 @@
     <string name="image_classification_results_header_row_score">Score</string>
 
     <string name="welcome_page_title">Interior Room Classifier</string>
-    <string name="welcome_page_description">Demo classificazione interni\nProgetto Machine Learning</string>
+    <string name="welcome_page_description">Demo classificazione interni\nProgetto Machine Learning\n\n\nAuthors:\nPietro Vassallo, Gioele Cageggi</string>
 
     <string name="welcome_page_image_classification_title">Image Classification</string>
     <string name="welcome_page_image_classification_description">Image classification examples run packaged inside app models using output of camera</string>

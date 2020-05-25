@@ -16,6 +16,7 @@ public class VisionListActivity extends AbstractListActivity {
       final Intent intent = new Intent(VisionListActivity.this, ImageClassificationActivity.class);
       intent.putExtra(ImageClassificationActivity.INTENT_MODULE_ASSET_NAME,
           "squeeznet.pt");
+
       intent.putExtra("model", "SqueezeNet");
       startActivity(intent);
     });
@@ -23,6 +24,7 @@ public class VisionListActivity extends AbstractListActivity {
       final Intent intent = new Intent(VisionListActivity.this, ImageClassificationActivity.class);
       intent.putExtra(ImageClassificationActivity.INTENT_MODULE_ASSET_NAME, "resnet.pt");
       intent.putExtra("model", "ResNet");
+
       /*intent.putExtra(ImageClassificationActivity.INTENT_INFO_VIEW_TYPE,
               getResources().getString(R.string.vision_card_resnet_description));*/
       startActivity(intent);
